@@ -2,7 +2,8 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\AdminController;
+use App\Http\Controllers\AgentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -29,3 +30,6 @@ Route::middleware('auth')->group(function () {
 });
 
 require __DIR__.'/auth.php';
+
+Route::get('admin/dashboard',[AdminController::class,'index'])->name('admin.dashboard');
+Route::get('agent/dashboard',[AgentController::class,'index'])->name('agent.dashboard');
